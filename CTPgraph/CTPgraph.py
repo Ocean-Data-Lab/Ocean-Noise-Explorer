@@ -9,23 +9,11 @@ import io
 import sys
 hv.extension('bokeh')
 sys.path.append('../utils')
-from Google import fetch_google_cloud_bucket_file
 
-axial_base_ctd = fetch_google_cloud_bucket_file("axial_base_2015-01-01_2022-01-01.csv")
-oregon_offshore_ctd = fetch_google_cloud_bucket_file("oregon_offshore_2015-01-01_2022-01-01.csv")
-oregon_shelf_ctd = fetch_google_cloud_bucket_file("oregon_shelf_2015-01-01_2022-01-01.csv")
-oregon_slope_ctd = fetch_google_cloud_bucket_file("oregon_slope_2015-01-01_2022-01-01.csv")
-
-
-axial_base_ctd_s = io.StringIO(axial_base_ctd.decode())
-oregon_offshore_ctd_s = io.StringIO(oregon_offshore_ctd.decode())
-oregon_shelf_ctd_s = io.StringIO(oregon_shelf_ctd.decode())
-oregon_slope_ctd_ctd_s = io.StringIO(oregon_slope_ctd.decode())
-
-axial_base_data = pd.read_csv(axial_base_ctd_s)
-oregon_offshore_data = pd.read_csv(oregon_offshore_ctd_s)
-oregon_shelf_data = pd.read_csv(oregon_shelf_ctd_s)
-oregon_slope_data = pd.read_csv(oregon_slope_ctd_ctd_s)
+axial_base_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/axial_base_2015-01-01_2022-01-01.csv")
+oregon_offshore_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/oregon_offshore_2015-01-01_2022-01-01.csv")
+oregon_shelf_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/oregon_shelf_2015-01-01_2022-01-01.csv")
+oregon_slope_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/oregon_slope_2015-01-01_2022-01-01.csv")
 
 
 def generateCTPgraph(startDate, endDate, location):

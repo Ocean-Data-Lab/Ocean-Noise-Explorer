@@ -10,17 +10,9 @@ from flask import jsonify
 import holoviews as hv
 hv.extension("bokeh")
 sys.path.append('../utils')
-from Google import fetch_google_cloud_bucket_file
 
-offshore_coreData = fetch_google_cloud_bucket_file("offshore_coreData.csv")
-shelf_coreData = fetch_google_cloud_bucket_file("shelf_coreData.csv")
-
-# Create a StringIO object from the CSV data
-offshore_coreData_s = io.StringIO(offshore_coreData.decode())
-shelf_coreData_s = io.StringIO(shelf_coreData.decode())
-
-offshore_graphData = pd.read_csv(offshore_coreData_s, parse_dates=["dateTime"])
-shelf_graphData = pd.read_csv(shelf_coreData_s, parse_dates=["dateTime"])
+offshore_graphData = pd.read_csv("https://storage.googleapis.com/shiplocationdata/offshore_coreData.csv", parse_dates=["dateTime"])
+shelf_graphData = pd.read_csv("https://storage.googleapis.com/shiplocationdata/shelf_coreData.csv", parse_dates=["dateTime"])
 
 # main function
 def generatingWind(startDate, endDate, location="Oregon Offshore", windSpeedType="WindMagnitude"):
