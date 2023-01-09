@@ -1,0 +1,13 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "time",
+        "frequency"
+    ],
+    "avg_method": "Welch Median",
+    "avg_time": "15 minute",
+    "comment": "data downloaded and processed with OOIPy",
+    "npts": 512,
+    "source": "OOI",
+    "title": "Low Frequency Hydrophone Spectrograms",
+    "units": "dB rel uPa^2/Hz"
+}

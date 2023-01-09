@@ -1,0 +1,244 @@
+{
+    "metadata": {
+        ".zattrs": {
+            "avg_method": "Welch Median",
+            "avg_time": "15 minute",
+            "comment": "data downloaded and processed with OOIPy",
+            "npts": 512,
+            "source": "OOI",
+            "title": "Low Frequency Hydrophone Spectrograms",
+            "units": "dB rel uPa^2/Hz"
+        },
+        ".zgroup": {
+            "zarr_format": 2
+        },
+        "axial_base/.zarray": {
+            "chunks": [
+                12365,
+                17
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                197836,
+                257
+            ],
+            "zarr_format": 2
+        },
+        "axial_base/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "frequency"
+            ],
+            "avg_method": "Welch Median",
+            "avg_time": "15 minute",
+            "comment": "data downloaded and processed with OOIPy",
+            "npts": 512,
+            "source": "OOI",
+            "title": "Low Frequency Hydrophone Spectrograms",
+            "units": "dB rel uPa^2/Hz"
+        },
+        "central_caldera/.zarray": {
+            "chunks": [
+                12365,
+                17
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                197836,
+                257
+            ],
+            "zarr_format": 2
+        },
+        "central_caldera/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "frequency"
+            ],
+            "avg_method": "Welch Median",
+            "avg_time": "15 minute",
+            "comment": "data downloaded and processed with OOIPy",
+            "npts": 512,
+            "source": "OOI",
+            "title": "Low Frequency Hydrophone Spectrograms",
+            "units": "dB rel uPa^2/Hz"
+        },
+        "eastern_caldera/.zarray": {
+            "chunks": [
+                12365,
+                17
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                197836,
+                257
+            ],
+            "zarr_format": 2
+        },
+        "eastern_caldera/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "frequency"
+            ],
+            "avg_method": "Welch Median",
+            "avg_time": "15 minute",
+            "comment": "data downloaded and processed with OOIPy",
+            "npts": 512,
+            "source": "OOI",
+            "title": "Low Frequency Hydrophone Spectrograms",
+            "units": "dB rel uPa^2/Hz"
+        },
+        "frequency/.zarray": {
+            "chunks": [
+                257
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                257
+            ],
+            "zarr_format": 2
+        },
+        "frequency/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "frequency"
+            ]
+        },
+        "slope_base/.zarray": {
+            "chunks": [
+                12365,
+                17
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                197836,
+                257
+            ],
+            "zarr_format": 2
+        },
+        "slope_base/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "frequency"
+            ],
+            "avg_method": "Welch Median",
+            "avg_time": "15 minute",
+            "comment": "data downloaded and processed with OOIPy",
+            "npts": 512,
+            "source": "OOI",
+            "title": "Low Frequency Hydrophone Spectrograms",
+            "units": "dB rel uPa^2/Hz"
+        },
+        "southern_hydrate/.zarray": {
+            "chunks": [
+                12365,
+                17
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                197836,
+                257
+            ],
+            "zarr_format": 2
+        },
+        "southern_hydrate/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time",
+                "frequency"
+            ],
+            "avg_method": "Welch Median",
+            "avg_time": "15 minute",
+            "comment": "data downloaded and processed with OOIPy",
+            "npts": 512,
+            "source": "OOI",
+            "title": "Low Frequency Hydrophone Spectrograms",
+            "units": "dB rel uPa^2/Hz"
+        },
+        "time/.zarray": {
+            "chunks": [
+                49459
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<i8",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                197836
+            ],
+            "zarr_format": 2
+        },
+        "time/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "calendar": "proleptic_gregorian",
+            "units": "microseconds since 2015-01-14T21:46:10.385000"
+        }
+    },
+    "zarr_consolidated_format": 1
+}
