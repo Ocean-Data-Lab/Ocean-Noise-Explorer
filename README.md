@@ -1,7 +1,3 @@
-# Website
-
-current website url: http://54.202.105.156
-
 ## Description
 
 This repository contains all the <b>back-end</b> source code of the UW Ocean Data Lab data visualization tool. All the front-end codes are already produced within the build file, so it's ready to be used.
@@ -15,7 +11,7 @@ To download and run this repository, please follow the steps below in your termi
 1. download the repository
 
 ```
-$ git clone https://github.com/AndrewLiu66/Website-backend.git
+$ git clone https://github.com/Ocean-Data-Lab/Website-backend.git
 ```
 
 2. go to the downloaded repository
