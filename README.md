@@ -43,7 +43,7 @@ $ python3 app.py
 6. open a browser and enter the following url
 
 ```
-$ http://localhost:8000/
+$ http://127.0.0.1:5000
 ```
 
 ## Tech Stack
