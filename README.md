@@ -20,7 +20,18 @@ $ git clone https://github.com/Ocean-Data-Lab/Website-backend.git
 $ cd Website-backend
 ```
 
-3. creates and run a virtual environment
+3. create and run a virtual environment
+
+Try the first way to download a virtual environment. If you have Python 3 installed, this command will work and you can jump to step 4 directly. If you don't have Python 3 installed, try the second way to download the virtual environment.
+
+\***\* first way \*\***
+
+```
+$ python3 -m venv venv
+$ source ./venv/bin/activate
+```
+
+\***\* second way \*\***
 
 ```
 $ pip install virtualenv
