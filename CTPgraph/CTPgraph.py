@@ -29,6 +29,7 @@ def generateCTPgraph(startDate, endDate, location):
     elif location == 'oregon_slope':
         data = oregon_slope_data
 
+    data = data.drop("depth(meter)", axis=1)
 
     locationName = location.replace("_"," ").title()
     #truncates data to date data.
@@ -81,6 +82,7 @@ def generateCTDLineGraph(dateTime, location, y = None):
     elif location == 'oregon_slope':
         data = oregon_slope_data
 
+    data = data.drop("depth(meter)", axis=1)
 
     date = pd.to_datetime(dateTime)
     strDate = str(date.date())
@@ -116,7 +118,6 @@ def generateCTDLine(location, date):
 
 
 def downloadCtdCsv(location, startDate, endDate):
-
     if location == 'axial_base':
         data = axial_base_data
     elif location == 'oregon_offshore':
@@ -126,12 +127,12 @@ def downloadCtdCsv(location, startDate, endDate):
     elif location == 'oregon_slope':
         data = oregon_slope_data
 
-    # result_csv = fetch_google_cloud_bucket_file(fileName)
-    # result_csv_s = io.StringIO(result_csv.decode())
-    # data = pd.read_csv(result_csv_s)
     dateColumns = data.columns
     startIndex = dateColumns.get_loc(startDate)
     endIndex = dateColumns.get_loc(endDate) + 1
     dateData = data.iloc[:, startIndex:endIndex]
+    dateData["depth(meter)"] = data["depth(meter)"]
+    # Reorder the columns so that "depth(meter)" is the first column
+    dateData = dateData[["depth(meter)"] + [col for col in dateData.columns if col != "depth(meter)"]]
     csv = dateData.to_csv(index=False)
     return csv
