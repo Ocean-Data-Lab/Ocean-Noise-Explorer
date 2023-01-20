@@ -159,15 +159,16 @@ def download():
         startDate = request_data['startDate']
         endDate = request_data['endDate']
         location = request_data['location']
+        # ********** downloadCTD csv **********
+        if 'selectedValue' in request_data and request_data['selectedValue'] == 'CTD':
+            return downloadCtdCsv(location, startDate, endDate)
+
         # ********** download wind rain csv **********
         if location == "oregon_offshore" or location == "oregon_shelf":
             graphType = request_data['meteGrahphType']
             return downloadWindRainCsv(startDate, endDate, location, graphType)
         starttime = pd.Timestamp(startDate)
         endtime = pd.Timestamp(endDate)
-        # ********** downloadCTD csv **********
-        if request_data['selectedValue'] == 'CTD':
-            return downloadCtdCsv(location, startDate, endDate)
 
         type = request_data['currType']
         frequency = request_data['frequency']
