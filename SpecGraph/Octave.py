@@ -80,6 +80,7 @@ def generateCsvOctave(slice_data, location, f0=50):
         'min': getLowerBound(x, location),
         'max': getUpperBound(x, location)
     }))
+    temp = temp.reset_index()
     csv = temp.to_csv(index=False)
     return csv
 
