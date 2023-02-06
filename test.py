@@ -31,6 +31,8 @@ from GetBoxPlotData import thirdQuartile
 from GetBoxPlotData import getLowerBound
 from GetBoxPlotData import getUpperBound
 
+fn = 'lf_specs.zarr'
+specs = xr.open_dataset(fn)
 
 # ***** generate graph *****
 def get_freq_band(f0, spec):
@@ -42,22 +44,15 @@ def get_freq_band(f0, spec):
     spec_band_mean = 10*np.log10(spec_band_lin_mean)
     return spec_band_mean
 
-
-# def generateDfForOctaveBox(f0, slice_data, location):
-#     octave_band_f0 = get_freq_band(f0, slice_data)
-#     octave_f0_value = octave_band_f0.values.tolist()
-#     octave_band_f0_time = octave_band_f0.coords['time'].values
-#     dates_lst = [str(x.astype('datetime64[D]')) for x in octave_band_f0_time]
-#     ovtave_dataframe = pd.DataFrame(
-#         {location: octave_f0_value, 'date': dates_lst}, columns=[location, 'date'])
-#     return ovtave_dataframe
 def generateDfForOctaveBox(f0, slice_data, location):
     octave_band_f0 = get_freq_band(f0, slice_data)
+
     octave_f0_value = octave_band_f0.values.tolist()
     octave_band_f0_time = octave_band_f0.coords['time'].values
     dates_lst = [str(x.astype('datetime64[D]')) for x in octave_band_f0_time]
     octave_dataframe = pd.DataFrame(
         {location: octave_f0_value, 'date': dates_lst}, columns=[location, 'date'])
+
     return octave_dataframe
 
 def generateOctave(location, startDate, endDate, f0, specs):
@@ -78,20 +73,6 @@ def generateOctaveGraph(location, startDate, endDate, f0, specs):
     return jso
 
 # ***** get download *****
-# def generateCsvOctave(slice_data, location, f0=50):
-#     df_octave = generateDfForOctaveBox(f0, slice_data, location)
-#     temp = df_octave.groupby('date').apply(lambda x: pd.Series({
-#         'median': median(x, location),
-#         'firstQuartile': firstQuartile(x, location),
-#         'thirdQuartile': thirdQuartile(x, location),
-#         'min': getLowerBound(x, location),
-#         'max': getUpperBound(x, location)
-#     }))
-#     temp = temp.reset_index()
-#     csv = temp.to_csv(index=False)
-#     return csv
-
-# ***** get download *****
 def generateCsvOctave(slice_data, location, f0=50):
     df_octave = generateDfForOctaveBox(f0, slice_data, location)
     temp = df_octave.groupby('date').apply(lambda x: pd.Series({
@@ -104,3 +85,13 @@ def generateCsvOctave(slice_data, location, f0=50):
     temp = temp.reset_index()
     csv = temp.to_csv(index=False)
     return csv
+
+
+location = "axial_base"
+starttime = "2019-01-01 00"
+endtime = "2020-02-14 00"
+frequency = 60
+
+slice_data = specs[location].loc[starttime:endtime, :]
+result = generateCsvOctave(slice_data, location, frequency)
+print(result)

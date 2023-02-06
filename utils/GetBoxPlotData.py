@@ -1,14 +1,16 @@
+import numpy as np
 def median(df, location):
     return df[location].median()
 
 
 def firstQuartile(df, location):
-    return int(df[location].quantile([0.25]))
+    result = df[location].quantile([0.25]).fillna(0)
+    return int(result)
 
 
 def thirdQuartile(df, location):
-    return int(df[location].quantile([0.75]))
-
+    result = df[location].quantile([0.75]).fillna(0)
+    return int(result)
 
 def getLowerBound(df, location):
     Q1 = df[location].quantile(0.25)
