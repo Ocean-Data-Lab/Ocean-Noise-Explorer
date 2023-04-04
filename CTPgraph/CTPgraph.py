@@ -9,14 +9,24 @@ import io
 import sys
 hv.extension('bokeh')
 sys.path.append('../utils')
-
+sys.path.append('../require_data/CTD')
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
-axial_base_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/axial_base_2015-01-01_2022-01-01.csv")
-oregon_offshore_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/oregon_offshore_2015-01-01_2022-01-01.csv")
-oregon_shelf_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/oregon_shelf_2015-01-01_2022-01-01.csv")
-oregon_slope_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/oregon_slope_2015-01-01_2022-01-01.csv")
+# axial_base_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/axial_base_2015-01-01_2022-01-01.csv")
+# oregon_offshore_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/oregon_offshore_2015-01-01_2022-01-01.csv")
+# oregon_shelf_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/oregon_shelf_2015-01-01_2022-01-01.csv")
+# oregon_slope_data = pd.read_csv("https://storage.googleapis.com/shiplocationdata/oregon_slope_2015-01-01_2022-01-01.csv")
+
+axial_base_data = pd.read_csv("./require_data/CTD/axial_base_2015-01-01_2022-01-01.csv")
+oregon_offshore_data = pd.read_csv("./require_data/CTD/oregon_offshore_2015-01-01_2022-01-01.csv")
+oregon_shelf_data = pd.read_csv("./require_data/CTD/oregon_shelf_2015-01-01_2022-01-01.csv")
+oregon_slope_data = pd.read_csv("./require_data/CTD/oregon_slope_2015-01-01_2022-01-01.csv")
+
+# axial_base_data = pd.read_csv("../require_data/CTD/axial_base_2015-01-01_2022-01-01.csv")
+# oregon_offshore_data = pd.read_csv("../require_data/CTD/oregon_offshore_2015-01-01_2022-01-01.csv")
+# oregon_shelf_data = pd.read_csv("../require_data/CTD/oregon_shelf_2015-01-01_2022-01-01.csv")
+# oregon_slope_data = pd.read_csv("../require_data/CTD/oregon_slope_2015-01-01_2022-01-01.csv")
 
 
 def generateCTPgraph(startDate, endDate, location):

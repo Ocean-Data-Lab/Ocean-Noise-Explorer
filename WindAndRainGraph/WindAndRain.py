@@ -10,12 +10,17 @@ from flask import jsonify
 import holoviews as hv
 hv.extension("bokeh")
 sys.path.append('../utils')
-
+sys.path.append('../require_data/CTD')
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
-offshore_graphData = pd.read_csv("https://storage.googleapis.com/shiplocationdata/offshore_coreData.csv", parse_dates=["dateTime"])
-shelf_graphData = pd.read_csv("https://storage.googleapis.com/shiplocationdata/shelf_coreData.csv", parse_dates=["dateTime"])
+
+offshore_graphData = pd.read_csv("./require_data/WindRainGraph/offshore_coreData.csv", parse_dates=["dateTime"])
+shelf_graphData = pd.read_csv("./require_data/WindRainGraph/shelf_coreData.csv", parse_dates=["dateTime"])
+
+
+# offshore_graphData = pd.read_csv("https://storage.googleapis.com/shiplocationdata/offshore_coreData.csv", parse_dates=["dateTime"])
+# shelf_graphData = pd.read_csv("https://storage.googleapis.com/shiplocationdata/shelf_coreData.csv", parse_dates=["dateTime"])
 
 # main function
 def generatingWind(startDate, endDate, location="Oregon Offshore", windSpeedType="WindMagnitude"):
