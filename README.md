@@ -45,7 +45,10 @@ $ source ./venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-5. run the project
+5. donwload required data in order to run this repository:
+   go to https://drive.google.com/drive/folders/1htkLFTJEsbtNeJYSkYuOyApsBWVBuTmE ,there are two folders("CTD" and "WindRainGraph"),go ahead and download these two folders and place them within the "require_data" folder inside this repository
+
+6. run the project
 
 ```
 $ python3 app.py
