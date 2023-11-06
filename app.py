@@ -1,5 +1,6 @@
 from graph import getInitGraph
 from graph import getUpdatedGraph
+from graph import getSTUpdatedGraph
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
 from flask.helpers import send_from_directory
@@ -91,6 +92,20 @@ def getUpdate():
     # for Octave Band only
     f0 = int(request_data['frequency'])
     return getUpdatedGraph(startDate, endDate, graphType, location, specs, f0)
+
+@app.route('/api/getSTUpdatedGraph', methods=['POST'])
+@cross_origin()
+def getSTUpdate():
+    request_data = request.get_json()
+    startDate = request_data['startDate']
+    endDate = request_data['endDate']
+    location = request_data['location']
+    locType = request_data['locType']
+    graphType = request_data['graphType']
+    overlap = request_data['overlap']
+    nperseg = request_data['nperseg']
+    avg_time = request_data['avg_time']
+    return getSTUpdatedGraph(startDate, endDate, graphType, location, locType, overlap, nperseg, avg_time)
 
 # get wind and rain graph
 @app.route('/api/getWindRainGraph', methods=['POST'])
