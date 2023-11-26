@@ -84,6 +84,7 @@ def getInit():
 @app.route('/api/getUpdatedGraph', methods=['POST'])
 @cross_origin()
 def getUpdate():
+    print("Hits app.py endpoint")
     request_data = request.get_json()
     startDate = request_data['startDate']
     endDate = request_data['endDate']
