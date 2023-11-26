@@ -6,6 +6,16 @@ from Spectrogram import generateSTSpectrogram
 from Spectrogram import generateBroadbandSTSpectrogram
 from SPDF import generateSPDF
 from Octave import generateOctaveGraph
+import xarray as xr
+
+fn_obs = 'obs_specs.zarr'
+specs_obs = xr.open_dataset(fn_obs).sortby('time')
+
+
+
+location_mapper = {'axial_base':'AXBA1', 'slope_base':'HYSB1', 
+                   'central_caldera':'AXCC1','eastern_caldera':'AXEC2','southern_hydrate': 'HYS14',
+                   'axial_ashes':'AXAS1', 'axial_international':'AXID1'}
 
 def getInitGraph(startDate, endDate, location, specs):
     return generateSpectrogram(startDate, endDate, location, specs)
@@ -13,6 +23,12 @@ def getInitGraph(startDate, endDate, location, specs):
 def getUpdatedGraph(startDate, endDate, graphType, location, specs, f0=50):
     if graphType == 'Spectrogram':
         return generateSpectrogram(startDate, endDate, location, specs)
+    elif graphType == 'OBS':
+        print("Hits graph.py OBS endpoint")
+        print("LOCATION ",location)
+        loc_str = location_mapper[location]
+        print("Location str ",loc_str)
+        return generateSpectrogram(startDate, endDate, loc_str, specs_obs)
     elif graphType == 'SPDF':
         return generateSPDF(startDate, endDate, location, specs)
     else:
