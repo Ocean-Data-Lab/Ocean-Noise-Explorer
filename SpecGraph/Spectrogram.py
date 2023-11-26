@@ -16,10 +16,16 @@ matplotlib.use('Agg')
 def generateSpectrogramGraph(startDate, endDate, location, specs):
     starttime = pd.Timestamp(startDate)
     endtime = pd.Timestamp(endDate)
+    print("Before location in spec.py gen")
     base_data = specs[location]
+    print("After location in spec.py gen")
     data_chunk = base_data.loc[starttime:endtime, :]
+    print("DATA")
+    print(data_chunk)
     graph = data_chunk.hvplot(
         x='time', y='frequency', rasterize=True, cmap='jet', width=1000, height=500)
+    print("GRAPH")
+    print(graph)
     plot = hv.render(graph)
     return plot
 
@@ -101,7 +107,7 @@ def generateBroadbandSTSpectrogramGraph(startDate, endDate, location, locType, o
     print(type(overlap))
     spec = hdata.compute_spectrogram(avg_time=int(avg_time),L=int(nperseg),overlap=int(overlap)/100)
     print(spec)
-    graph = spec.hvplot(x='time', y='frequency', rasterize=True, cmap='jet', clim = (20,70), width=1000, height=500)
+    graph = spec.hvplot(x='time', y='frequency', rasterize=True, cmap='jet', clim = (20,60), width=1000, height=500)
     print(graph)
     plot = hv.render(graph)
     return plot
