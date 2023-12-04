@@ -84,15 +84,15 @@ def getInit():
 @app.route('/api/getUpdatedGraph', methods=['POST'])
 @cross_origin()
 def getUpdate():
-    print("Hits app.py endpoint")
     request_data = request.get_json()
     startDate = request_data['startDate']
     endDate = request_data['endDate']
     location = request_data['location']
     graphType = request_data['graphType']
+    hydrophoneType = request_data['selectedValue']
     # for Octave Band only
     f0 = int(request_data['frequency'])
-    return getUpdatedGraph(startDate, endDate, graphType, location, specs, f0)
+    return getUpdatedGraph(startDate, endDate, graphType, hydrophoneType, location, specs, f0)
 
 @app.route('/api/getSTUpdatedGraph', methods=['POST'])
 @cross_origin()

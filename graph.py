@@ -20,15 +20,14 @@ location_mapper = {'axial_base':'AXBA1', 'slope_base':'HYSB1',
 def getInitGraph(startDate, endDate, location, specs):
     return generateSpectrogram(startDate, endDate, location, specs)
 
-def getUpdatedGraph(startDate, endDate, graphType, location, specs, f0=50):
+def getUpdatedGraph(startDate, endDate, graphType, hydrophoneType, location, specs, f0=50):
+    if hydrophoneType == 'OBS':
+        specs = specs_obs
+        loc_str = location_mapper[location]
+        location = loc_str
+        
     if graphType == 'Spectrogram':
         return generateSpectrogram(startDate, endDate, location, specs)
-    elif graphType == 'OBS':
-        print("Hits graph.py OBS endpoint")
-        print("LOCATION ",location)
-        loc_str = location_mapper[location]
-        print("Location str ",loc_str)
-        return generateSpectrogram(startDate, endDate, loc_str, specs_obs)
     elif graphType == 'SPDF':
         return generateSPDF(startDate, endDate, location, specs)
     else:
