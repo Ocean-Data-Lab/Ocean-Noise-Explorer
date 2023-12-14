@@ -10,9 +10,7 @@ Ocean Noise Explorer Documentation
   :alt: ONE Logo
   :align: right
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+
 
 
 
