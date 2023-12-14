@@ -103,10 +103,62 @@ for the precipitation rate, two major operations are performed:
 -------------
 Speed of sound with depth vs time
 
-Other Features
-==============
+How to Setup Ocean Noise Explorer
+=================================
+
+Ocean Noise Explorer can be accessed via the source Github repository. 
+The following steps can assist in properly setting up the application.
+
+1. Clone the repository to your local system:
+
+.. code-block :: bash
+
+  git clone https://github.com/Ocean-Data-Lab/Ocean-Noise-Explorer.git
+
+2. Going into the cloned repository, create a virtual environment and activate it:
+
+.. code-block :: bash
+
+  python3 -m venv venv
+  source ./venv/bin/activate
+
+3. Download the required dependencies:
+
+.. code-block :: bash
+
+  pip install -r requirements.txt
+
+4. Download required data in order to run this repository: firstly,
+create a folder called "require_data" inside the repository, 
+and then go to https://drive.google.com/drive/folders/1htkLFTJEsbtNeJYSkYuOyApsBWVBuTmE,
+there are two folders ("CTD" and "WindRainGraph") in the drive,go ahead and download these two folders
+ and place them within the "require_data" folder inside this repository.
+
+5. Finally, the precomputed OBS Spectrograms can be accessed from this drive link: 
+https://drive.google.com/file/d/1veUVFm47zVlwzojOjN7xHIv2lc7qTde9/view?usp=drive_link.
+This downloaded zarr file must be added to the root folder.
+
+6. Run the Project:
+
+.. code-block :: bash
+
+  python3 app.py
+
+7. Open this URL in a web browser:
+
+.. code-block :: bash
+
+  http://127.0.0.1:5000
+
+
+Tech Stack
+==========
+
+1. Backend: Python Flask
+2. Frontend: React(the build file produced from the Frontend code in https://github.com/Ocean-Data-Lab/Website-Frontend)
+
 
 Video Gallery
--------------
+=============
 
 The Ocean Noise Explorer also has a video gallery showing snippets from some intersting acoustics events such as airgun pulses, fin whale calls, ship noise, whale vocalizations & seafloor volcanic eruptions. Feel free to check it out to see some interesting patterns!
