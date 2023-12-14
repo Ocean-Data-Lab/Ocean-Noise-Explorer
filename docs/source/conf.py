@@ -1,71 +1,28 @@
 # Configuration file for the Sphinx documentation builder.
 #
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
+# For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-import os
-import sys
-import datetime
-sys.path.insert(0, sys.path.insert(0, os.path.dirname(os.path.abspath(".."))))
-
 # -- Project information -----------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Ocean Noise Explorer"
-#copyright = f"{datetime.date.today().year}, Felix Schwock, John Ragland"
-#author = "Felix Schwock, John Ragland"
-
-# The full version, including alpha/beta/rc tags
-#release = "1.2.1dev0"
+project = 'Ocean Noise Explorer'
+copyright = '2023, Anish Dixit, Andrew Liu'
+author = 'Anish Dixit, Andrew Liu'
+release = '1.0'
 
 # -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.coverage", "sphinx.ext.napoleon"]
+extensions = []
 
-autodoc_mock_imports = [
-    "numpy",
-    "matplotlib",
-    "obspy",
-    "scipy",
-    "pandas",
-    "thredds_crawler",
-    "lxml",
-    "requests",
-    "seaborn",
-    "fsspec",
-    "_ooipy_version",
-]
-
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ["_templates"]
-
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
+templates_path = ['_templates']
 exclude_patterns = []
 
-master_doc = "index"
 
 
 # -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme = "sphinx_rtd_theme"
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["_static"]
-
-html_favicon = "../../build/assets/images/logos/one.png"
+html_theme = 'alabaster'
+html_static_path = ['_static']
