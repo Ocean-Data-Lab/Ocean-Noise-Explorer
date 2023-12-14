@@ -12,8 +12,6 @@ Ocean Noise Explorer Documentation
 
 
 
-
-
 Ocean Data Lab at the University of Washington has developed Ocean Noise Explorer (ONE), 
 a web-based interactive ocean soundscape that will enable users to visualize and explore 
 a wide variety of underwater noise metrics and other related data products. 
@@ -22,7 +20,7 @@ Coastal Endurance Array of the Ocean Observatories Initiative (OOI).
 The raw data is processed by OOIPY, a Python library developed by our team,
 to calculate different data products that are required for a comprehensive ocean soundscape analysis.
 
-ONE Features
+Features
 =============
 
 The Ocean Noise Explorer interface consists of a geographical map of the Pacific Ocean off the coast of Oregon and displays the locations of the Hydrophones set up on the seafloors. There are 9 different hydrophone locations, each with different products:
@@ -44,6 +42,7 @@ The different types of hydrophone data products available are:
 3. CTD Data
 4. OBS Data
 5. Meteorological Data
+
 
 Data Visualization Options
 ===========================
@@ -103,6 +102,7 @@ for the precipitation rate, two major operations are performed:
 -------------
 Speed of sound with depth vs time
 
+
 How to Setup Ocean Noise Explorer
 =================================
 
@@ -132,7 +132,7 @@ The following steps can assist in properly setting up the application.
 create a folder called "require_data" inside the repository, 
 and then go to https://drive.google.com/drive/folders/1htkLFTJEsbtNeJYSkYuOyApsBWVBuTmE,
 there are two folders ("CTD" and "WindRainGraph") in the drive,go ahead and download these two folders
- and place them within the "require_data" folder inside this repository.
+and place them within the "require_data" folder inside this repository.
 
 5. Finally, the precomputed OBS Spectrograms can be accessed from this drive link: 
 https://drive.google.com/file/d/1veUVFm47zVlwzojOjN7xHIv2lc7qTde9/view?usp=drive_link.
@@ -161,4 +161,42 @@ Tech Stack
 Video Gallery
 =============
 
-The Ocean Noise Explorer also has a video gallery showing snippets from some intersting acoustics events such as airgun pulses, fin whale calls, ship noise, whale vocalizations & seafloor volcanic eruptions. Feel free to check it out to see some interesting patterns!
+The Ocean Noise Explorer also has a video gallery showing snippets from some intersting acoustics events
+such as airgun pulses, fin whale calls, ship noise, whale vocalizations & seafloor volcanic eruptions.
+Feel free to check it out to see some interesting patterns!
+
+Airgun Pulses:
+--------------
+
+.. image:: https://img.youtube.com/vi/xp5jJUeLNRw/maxresdefault.jpg
+    :alt: IMAGE ALT TEXT HERE
+    :target: https://www.youtube.com/watch?v=xp5jJUeLNRw
+
+
+Fin Whale Calls:
+----------------
+
+.. image:: https://img.youtube.com/vi/kgeuBAxFB3E/maxresdefault.jpg
+    :alt: IMAGE ALT TEXT HERE
+    :target: https://www.youtube.com/watch?v=kgeuBAxFB3E
+
+
+Ship Noise:
+-----------
+
+.. image:: https://img.youtube.com/vi/qla5DjV2i_o/maxresdefault.jpg
+    :alt: IMAGE ALT TEXT HERE
+    :target: https://www.youtube.com/watch?v=qla5DjV2i_o
+
+Seafloor Volcanic Eruptions:
+----------------------------
+
+.. image:: https://img.youtube.com/vi/erTn9MIQYIE/maxresdefault.jpg
+    :alt: IMAGE ALT TEXT HERE
+    :target: https://www.youtube.com/watch?v=erTn9MIQYIE
+
+
+
+
+
+

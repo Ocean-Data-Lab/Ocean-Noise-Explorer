@@ -46,7 +46,7 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Ocean Noise Explorer Documentation</a></li>
-<li><a class="reference internal" href="#one-features">ONE Features</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
 <li><a class="reference internal" href="#data-visualization-options">Data Visualization Options</a><ul>
 <li><a class="reference internal" href="#low-frequency-spectrogram">1. Low Frequency Spectrogram</a></li>
 <li><a class="reference internal" href="#short-term-spectrogram">2. Short Term Spectrogram</a></li>
@@ -58,8 +58,13 @@
 <li><a class="reference internal" href="#ctd-chart">8. CTD Chart</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#other-features">Other Features</a><ul>
-<li><a class="reference internal" href="#video-gallery">Video Gallery</a></li>
+<li><a class="reference internal" href="#how-to-setup-ocean-noise-explorer">How to Setup Ocean Noise Explorer</a></li>
+<li><a class="reference internal" href="#tech-stack">Tech Stack</a></li>
+<li><a class="reference internal" href="#video-gallery">Video Gallery</a><ul>
+<li><a class="reference internal" href="#airgun-pulses">Airgun Pulses:</a></li>
+<li><a class="reference internal" href="#fin-whale-calls">Fin Whale Calls:</a></li>
+<li><a class="reference internal" href="#ship-noise">Ship Noise:</a></li>
+<li><a class="reference internal" href="#seafloor-volcanic-eruptions">Seafloor Volcanic Eruptions:</a></li>
 </ul>
 </li>
 </ul>
@@ -99,8 +104,8 @@ Coastal Endurance Array of the Ocean Observatories Initiative (OOI).
 The raw data is processed by OOIPY, a Python library developed by our team,
 to calculate different data products that are required for a comprehensive ocean soundscape analysis.</p>
 </section>
-<section id="one-features">
-<h1>ONE Features<a class="headerlink" href="#one-features" title="Permalink to this heading"></a></h1>
+<section id="features">
+<h1>Features<a class="headerlink" href="#features" title="Permalink to this heading"></a></h1>
 <p>The Ocean Noise Explorer interface consists of a geographical map of the Pacific Ocean off the coast of Oregon and displays the locations of the Hydrophones set up on the seafloors. There are 9 different hydrophone locations, each with different products:</p>
 <ol class="arabic simple">
 <li><p>Axial Base</p></li>
@@ -174,11 +179,77 @@ for the precipitation rate, two major operations are performed:
 <p>Speed of sound with depth vs time</p>
 </section>
 </section>
-<section id="other-features">
-<h1>Other Features<a class="headerlink" href="#other-features" title="Permalink to this heading"></a></h1>
+<section id="how-to-setup-ocean-noise-explorer">
+<h1>How to Setup Ocean Noise Explorer<a class="headerlink" href="#how-to-setup-ocean-noise-explorer" title="Permalink to this heading"></a></h1>
+<p>Ocean Noise Explorer can be accessed via the source Github repository.
+The following steps can assist in properly setting up the application.</p>
+<ol class="arabic simple">
+<li><p>Clone the repository to your local system:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Ocean-Data-Lab/Ocean-Noise-Explorer.git
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Going into the cloned repository, create a virtual environment and activate it:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>./venv/bin/activate
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Download the required dependencies:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>4. Download required data in order to run this repository: firstly,
+create a folder called “require_data” inside the repository,
+and then go to <a class="reference external" href="https://drive.google.com/drive/folders/1htkLFTJEsbtNeJYSkYuOyApsBWVBuTmE">https://drive.google.com/drive/folders/1htkLFTJEsbtNeJYSkYuOyApsBWVBuTmE</a>,
+there are two folders (“CTD” and “WindRainGraph”) in the drive,go ahead and download these two folders
+and place them within the “require_data” folder inside this repository.</p>
+<p>5. Finally, the precomputed OBS Spectrograms can be accessed from this drive link:
+<a class="reference external" href="https://drive.google.com/file/d/1veUVFm47zVlwzojOjN7xHIv2lc7qTde9/view?usp=drive_link">https://drive.google.com/file/d/1veUVFm47zVlwzojOjN7xHIv2lc7qTde9/view?usp=drive_link</a>.
+This downloaded zarr file must be added to the root folder.</p>
+<ol class="arabic simple" start="6">
+<li><p>Run the Project:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>app.py
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Open this URL in a web browser:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://127.0.0.1:5000
+</pre></div>
+</div>
+</section>
+<section id="tech-stack">
+<h1>Tech Stack<a class="headerlink" href="#tech-stack" title="Permalink to this heading"></a></h1>
+<ol class="arabic simple">
+<li><p>Backend: Python Flask</p></li>
+<li><p>Frontend: React(the build file produced from the Frontend code in <a class="reference external" href="https://github.com/Ocean-Data-Lab/Website-Frontend">https://github.com/Ocean-Data-Lab/Website-Frontend</a>)</p></li>
+</ol>
+</section>
 <section id="video-gallery">
-<h2>Video Gallery<a class="headerlink" href="#video-gallery" title="Permalink to this heading"></a></h2>
-<p>The Ocean Noise Explorer also has a video gallery showing snippets from some intersting acoustics events such as airgun pulses, fin whale calls, ship noise, whale vocalizations &amp; seafloor volcanic eruptions. Feel free to check it out to see some interesting patterns!</p>
+<h1>Video Gallery<a class="headerlink" href="#video-gallery" title="Permalink to this heading"></a></h1>
+<p>The Ocean Noise Explorer also has a video gallery showing snippets from some intersting acoustics events
+such as airgun pulses, fin whale calls, ship noise, whale vocalizations &amp; seafloor volcanic eruptions.
+Feel free to check it out to see some interesting patterns!</p>
+<section id="airgun-pulses">
+<h2>Airgun Pulses:<a class="headerlink" href="#airgun-pulses" title="Permalink to this heading"></a></h2>
+<a class="reference external image-reference" href="https://www.youtube.com/watch?v=xp5jJUeLNRw"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/xp5jJUeLNRw/maxresdefault.jpg" /></a>
+</section>
+<section id="fin-whale-calls">
+<h2>Fin Whale Calls:<a class="headerlink" href="#fin-whale-calls" title="Permalink to this heading"></a></h2>
+<a class="reference external image-reference" href="https://www.youtube.com/watch?v=kgeuBAxFB3E"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/kgeuBAxFB3E/maxresdefault.jpg" /></a>
+</section>
+<section id="ship-noise">
+<h2>Ship Noise:<a class="headerlink" href="#ship-noise" title="Permalink to this heading"></a></h2>
+<a class="reference external image-reference" href="https://www.youtube.com/watch?v=qla5DjV2i_o"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/qla5DjV2i_o/maxresdefault.jpg" /></a>
+</section>
+<section id="seafloor-volcanic-eruptions">
+<h2>Seafloor Volcanic Eruptions:<a class="headerlink" href="#seafloor-volcanic-eruptions" title="Permalink to this heading"></a></h2>
+<a class="reference external image-reference" href="https://www.youtube.com/watch?v=erTn9MIQYIE"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/erTn9MIQYIE/maxresdefault.jpg" /></a>
 </section>
 </section>
 
