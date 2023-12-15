@@ -29,7 +29,7 @@ def getUpdatedGraph(startDate, endDate, graphType, hydrophoneType, location, spe
     if graphType == 'Spectrogram':
         return generateSpectrogram(startDate, endDate, location, specs)
     elif graphType == 'SPDF':
-        return generateSPDF(startDate, endDate, location, specs)
+        return generateSPDF(startDate, endDate, location, specs, hydrophoneType)
     else:
         return generateOctaveGraph(location, startDate, endDate, f0, specs)
     
