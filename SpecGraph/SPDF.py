@@ -25,19 +25,22 @@ matplotlib.use('Agg')
 
 
 # ***** generate graph *****
-def generateSPDF(startDate, endDate, location, specs):
+def generateSPDF(startDate, endDate, location, specs, sensorType):
     starttime = pd.Timestamp(startDate)
     endtime = pd.Timestamp(endDate)
     base_data = specs[location]
     spec_slice = base_data.loc[starttime:endtime, :]
-    spdf = get_spdf(spec_slice, fs_hz=200)
-    return plot_spdf(spdf, log=False)
+    spdf = get_spdf(spec_slice, sensorType, fs_hz=200)
+    return plot_spdf(spdf, sensorType, log=False)
 
 
-def get_spdf(spec, fs_hz, fmax=None, spl_bins=np.linspace(0, 120, 481),
+def get_spdf(spec, sensorType, fs_hz,  fmax=None, spl_bins=np.linspace(0, 120, 481),
              percentiles=[1, 5, 10, 50, 90, 95, 99]):
     if fmax is None:
         fmax = spec.frequency[-1]
+    
+    if sensorType == 'OBS':
+        spl_bins = np.linspace(-400, -200, 481)
 
     n_freq_bin = int(len(spec.frequency) * fmax/(fs_hz/2)) + 1
 
@@ -59,12 +62,13 @@ def get_spdf(spec, fs_hz, fmax=None, spl_bins=np.linspace(0, 120, 481),
     return spdf_dct
 
 
-def plot_spdf(spdf, vmin=0.003, vmax=0.2, vdelta=0.0025, save=False, filename=None, log=True, title='Spectral PDF'):
+def plot_spdf(spdf, sensorType, vmin=0.003, vmax=0.2, vdelta=0.0025, save=False, filename=None, log=True, title='Spectral PDF'):
     cbarticks = np.arange(vmin, vmax+vdelta, vdelta)
     fig, ax = plt.subplots(figsize=(9, 5))
     im = ax.contourf(spdf['freq'], spdf['spl'], np.transpose(spdf['pdf']),
                      cbarticks, norm=colors.Normalize(vmin=vmin, vmax=vmax),
                      cmap='jet', extend='max', alpha=0.50, linewidth=0)
+    print(im)
 
     # plot some percentiles:
     plt.plot(spdf['freq'], spdf['1'], color='black')
@@ -77,7 +81,11 @@ def plot_spdf(spdf, vmin=0.003, vmax=0.2, vdelta=0.0025, save=False, filename=No
 
     plt.ylabel(r'spectral level (dB rel $1 \mathrm{\frac{μ Pa^2}{Hz}}$)')
     plt.xlabel('frequency (Hz)')
-    plt.ylim([36, 100])
+    if sensorType == "OBS":
+        plt.ylim([-400,-200])
+    else:
+        plt.ylim([36, 100])
+        
     plt.xlim([0, 90])
     if log:
         plt.xscale('log')
