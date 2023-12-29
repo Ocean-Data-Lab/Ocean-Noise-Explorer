@@ -54,7 +54,7 @@
 <li><a class="reference internal" href="#spdf">4. SPDF</a></li>
 <li><a class="reference internal" href="#octave-band">5. Octave Band</a></li>
 <li><a class="reference internal" href="#obs-charts">6. OBS Charts</a></li>
-<li><a class="reference internal" href="#wild-and-rain-graph">7. Wild and Rain Graph</a></li>
+<li><a class="reference internal" href="#wind-and-rain-graph">7. Wind and Rain Graph</a></li>
 <li><a class="reference internal" href="#ctd-chart">8. CTD Chart</a></li>
 </ul>
 </li>
@@ -96,12 +96,12 @@
   <section id="ocean-noise-explorer-documentation">
 <h1>Ocean Noise Explorer Documentation<a class="headerlink" href="#ocean-noise-explorer-documentation" title="Permalink to this heading"></a></h1>
 <a class="reference internal image-reference" href="_images/one.png"><img alt="ONE Logo" class="align-right" src="_images/one.png" style="width: 200px;" /></a>
-<p>Ocean Data Lab at the University of Washington has developed Ocean Noise Explorer (ONE),
+<p>The <a class="reference external" href="https://sites.uw.edu/abadi/">Ocean Data Lab</a> at the University of Washington has developed Ocean Noise Explorer (ONE),
 a web-based interactive ocean soundscape that will enable users to visualize and explore
 a wide variety of underwater noise metrics and other related data products.
 The raw data used in this project is collected by the Regional Cabled Array and the
-Coastal Endurance Array of the Ocean Observatories Initiative (OOI).
-The raw data is processed by OOIPY, a Python library developed by our team,
+Coastal Endurance Array of the <a class="reference external" href="https://oceanobservatories.org">Ocean Observatories Initiative (OOI)</a>.
+The raw data is processed by <a class="reference external" href="https://ooipy.readthedocs.io/en/latest/">OOIPY</a>, a Python library developed by our team,
 to calculate different data products that are required for a comprehensive ocean soundscape analysis.</p>
 </section>
 <section id="features">
@@ -156,8 +156,8 @@ to calculate different data products that are required for a comprehensive ocean
 <h2>6. OBS Charts<a class="headerlink" href="#obs-charts" title="Permalink to this heading"></a></h2>
 <p>The OBS data is from the z-channel of the OBS. the spectrograms are pre-computed and saved locally. This allows for the longer term data to be visualized. The spectrograms are calculated using a 1 hour Welch-median PSD estimate. The Welch estimate uses a Hann window, 1024 FFT points and 50 % overlap. We can create Low Frequency Spectrograms, Octave Bands and SPDF from OBS Data.</p>
 </section>
-<section id="wild-and-rain-graph">
-<h2>7. Wild and Rain Graph<a class="headerlink" href="#wild-and-rain-graph" title="Permalink to this heading"></a></h2>
+<section id="wind-and-rain-graph">
+<h2>7. Wind and Rain Graph<a class="headerlink" href="#wind-and-rain-graph" title="Permalink to this heading"></a></h2>
 <p>Wind Graph (at zero degree, wind direction is eastward):
 1. If “Wind Magnitude” is selected, the wind speed is calculated throught the following formula:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wind<span class="w"> </span><span class="nv">magnitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>np.sqrt<span class="o">((</span>eastward_wind_velocity<span class="o">)</span>**2<span class="w"> </span>+<span class="w"> </span><span class="o">(</span>northward_wind_velocity<span class="o">)</span>**2<span class="o">)</span>
@@ -237,18 +237,34 @@ such as airgun pulses, fin whale calls, ship noise, whale vocalizations &amp; se
 Feel free to check it out to see some interesting patterns!</p>
 <section id="airgun-pulses">
 <h2>Airgun Pulses:<a class="headerlink" href="#airgun-pulses" title="Permalink to this heading"></a></h2>
+<p class="center">Location: Axial Base Seafloor (Fs = 64 kHz)</p>
+<p class="center">Start Time: 2019-08-01 15:00:03</p>
+<p class="center">End Time: 2019-08-01 15:00:20</p>
+<p class="center">Hydrophone Type: Broadband</p>
 <a class="reference external image-reference" href="https://www.youtube.com/watch?v=xp5jJUeLNRw"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/xp5jJUeLNRw/maxresdefault.jpg" /></a>
 </section>
 <section id="fin-whale-calls">
 <h2>Fin Whale Calls:<a class="headerlink" href="#fin-whale-calls" title="Permalink to this heading"></a></h2>
+<p class="center">Location: Axial Base Seafloor (Fs = 200 Hz)</p>
+<p class="center">Start Time: 2019-02-03 12:00:00</p>
+<p class="center">End Time: 2019-02-03 12:15:00</p>
+<p class="center">Hydrophone Type: Low Frequency</p>
 <a class="reference external image-reference" href="https://www.youtube.com/watch?v=kgeuBAxFB3E"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/kgeuBAxFB3E/maxresdefault.jpg" /></a>
 </section>
 <section id="ship-noise">
 <h2>Ship Noise:<a class="headerlink" href="#ship-noise" title="Permalink to this heading"></a></h2>
+<p class="center">Location: Axial Base Seafloor (Fs = 200 Hz)</p>
+<p class="center">Start Time: 2016-01-08 21:54:00</p>
+<p class="center">End Time: 2016-01-08 23:54:00</p>
+<p class="center">Hydrophone Type: Low Frequency</p>
 <a class="reference external image-reference" href="https://www.youtube.com/watch?v=qla5DjV2i_o"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/qla5DjV2i_o/maxresdefault.jpg" /></a>
 </section>
 <section id="seafloor-volcanic-eruptions">
 <h2>Seafloor Volcanic Eruptions:<a class="headerlink" href="#seafloor-volcanic-eruptions" title="Permalink to this heading"></a></h2>
+<p class="center">Location: Axial Base Seaflor (Fs = 200 Hz)</p>
+<p class="center">Start Time: 2015-04-23 22:35:00</p>
+<p class="center">End Time: 2015-04-23 22:45:00</p>
+<p class="center">Hydrophone Type: Low Frequency</p>
 <a class="reference external image-reference" href="https://www.youtube.com/watch?v=erTn9MIQYIE"><img alt="IMAGE ALT TEXT HERE" src="https://img.youtube.com/vi/erTn9MIQYIE/maxresdefault.jpg" /></a>
 </section>
 </section>
@@ -261,7 +277,7 @@ Feel free to check it out to see some interesting patterns!</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Anish Dixit, Andrew Liu.</p>
+    <p>&#169; Copyright 2023, Ocean Data Lab.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

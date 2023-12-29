@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Ocean Noise Explorer'
-copyright = '2023, Anish Dixit, Andrew Liu'
-author = 'Anish Dixit, Andrew Liu'
+copyright = '2023, Ocean Data Lab'
+author = 'Anish Dixit, Andrew Liu, John Ragland'
 release = '1.0'
 
 # -- General configuration ---------------------------------------------------
