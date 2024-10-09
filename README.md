@@ -46,7 +46,7 @@ $ pip install -r requirements.txt
 ```
 
 5. donwload required data in order to run this repository:
-   firstly,create a folder called "require_data" inside the repository, and then go to https://drive.google.com/drive/folders/1htkLFTJEsbtNeJYSkYuOyApsBWVBuTmE ,there are two folders("CTD" and "WindRainGraph") in the drive,go ahead and download these two folders and place them within the "require_data" folder inside this repository, once finish, your repository should look like this:
+   firstly,create a folder called "require_data" inside the repository, and then go to https://drive.google.com/drive/folders/1NzQRFaB9cfzlMJgZGWvBUMI-WSHEasrR?usp=sharing ,there are two folders("CTD" and "WindRainGraph") in the drive,go ahead and download these two folders and place them within the "require_data" folder inside this repository, once finish, your repository should look like this:
 
 ![Local Image](requiredata.png)
 
