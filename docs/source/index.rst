@@ -129,7 +129,7 @@ The following steps can assist in properly setting up the application.
 
 4. Download required data in order to run this repository: firstly,
 create a folder called "require_data" inside the repository, 
-and then go to https://drive.google.com/drive/folders/1htkLFTJEsbtNeJYSkYuOyApsBWVBuTmE,
+and then go to https://drive.google.com/drive/folders/1NzQRFaB9cfzlMJgZGWvBUMI-WSHEasrR?usp=sharing,
 there are two folders ("CTD" and "WindRainGraph") in the drive,go ahead and download these two folders
 and place them within the "require_data" folder inside this repository.
 
