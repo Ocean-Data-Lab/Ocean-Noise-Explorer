@@ -134,8 +134,8 @@ there are two folders ("CTD" and "WindRainGraph") in the drive,go ahead and down
 and place them within the "require_data" folder inside this repository.
 
 5. Finally, the precomputed OBS Spectrograms can be accessed from this drive link: 
-https://drive.google.com/file/d/1veUVFm47zVlwzojOjN7xHIv2lc7qTde9/view?usp=drive_link.
-This downloaded zarr file must be added to the root folder.
+https://drive.google.com/file/d/16HK4SfR3vjd5rLfZQlzXijR-ETnkKcam/view?usp=sharing.
+Please download and unzip this folder and add it to the root folder.
 
 6. Run the Project:
 
